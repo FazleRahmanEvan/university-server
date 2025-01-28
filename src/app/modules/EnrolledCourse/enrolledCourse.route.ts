@@ -8,6 +8,12 @@ import { USER_ROLE } from "../user/user.constant";
 
 const router = express.Router();
 
+router.get(
+  "/",
+  auth(USER_ROLE.faculty),
+  EnrolledCourseControllers.getAllEnrolledCourses
+);
+
 router.post(
   "/create-enrolled-course",
   auth(USER_ROLE.student),
@@ -19,7 +25,7 @@ router.post(
 
 router.get(
   "/my-enrolled-courses",
-  auth(USER_ROLE.student),
+  auth(USER_ROLE.student, USER_ROLE.faculty),
   EnrolledCourseControllers.getMyEnrolledCourses
 );
 
