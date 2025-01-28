@@ -5,11 +5,11 @@ import { Course } from "../Course/course.model";
 import { Faculty } from "../Faculty/faculty.model";
 import { AcademicDepartment } from "../academicDepartment/academicDepartment.model";
 import { AcademicFaculty } from "../academicFaculty/academicFaculty.model";
-import { SemesterRegistration } from "../semesterRegistration/semesterRegistration.model";
+import { SemesterRegistration } from "../SemesterRegistration/semesterRegistration.model";
 import { TOfferedCourse } from "./OfferedCourse.interface";
 import { OfferedCourse } from "./OfferedCourse.model";
 import { hasTimeConflict } from "./OfferedCourse.utils";
-import { Student } from "../student/student.model";
+import { Student } from "../Student/student.model";
 
 const createOfferedCourseIntoDB = async (payload: TOfferedCourse) => {
   const {
